@@ -9,16 +9,12 @@ import config
 config = config.rec()
 
 def getDay(timestamp):
-	FORY = '%d'
-	#os.environ["TZ"] = config.default_timezone
-	#time.tzset()
+	FORY = '%m-%d'
 	str = time.strftime(FORY, time.localtime(timestamp))
 	return str
 
-def getMonth(timestamp):
-	FORY = '%b'
-	#os.environ["TZ"] = config.default_timezone
-	#time.tzset()
+def getYear(timestamp):
+	FORY = '%Y'
 	str = time.strftime(FORY, time.localtime(timestamp))
 	return str
 
@@ -26,8 +22,7 @@ def formatDate(timestamp):
 	FORY = '%Y-%m-%d @ %H:%M'
 	FORM = '%m-%d @ %H:%M'
 	FORH = '%H:%M'
-	#os.environ["TZ"] = config.default_timezone
-	#time.tzset()
+
 	rtime = time.strftime(FORM, time.localtime(timestamp))
 	htime = time.strftime(FORH, time.localtime(timestamp))
 	now = int(time.time())
@@ -51,9 +46,7 @@ def formatDate(timestamp):
 	return str
 
 def formatDate2(timestamp):
-	FORY = '%Y-%m-%d @ %H:%M'
-	#os.environ["TZ"] = config.default_timezone
-	#time.tzset()
+	FORY = '%Y-%m-%d %H:%M'
 	str = time.strftime(FORY, time.localtime(timestamp))
 	return str
 

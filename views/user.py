@@ -26,7 +26,7 @@ def login():
         base.currentUserSet(username)
         return redirect("/")
     else:
-        return redirect("/login")
+        return redirect("/login?error=wrongPwd")
 
 #class LogoutHandler(BaseHandler):
 @user.route('/logout')

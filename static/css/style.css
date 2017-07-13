@@ -392,13 +392,14 @@ a.ribbon:hover .ribbon-piece {
 .ribbon .top {
   border-bottom: 1px solid rgba(255, 255, 255, 0.6);
   border-radius: 1px 1px 0 0;
-  font-size: 11px;
+  font-size: 13px;
+  font-weight: bold;
   padding: 4px 0;
   text-transform: uppercase;
 }
 
 .ribbon .bottom {
-  font-size: 17px;
+  font-size: 13px;
   padding: 5px 0;
 }
 
@@ -556,6 +557,7 @@ li.archive {
 
 span.time {
   margin-left: 10px;
+  color: #999;
 }
 
 .login button {
@@ -563,7 +565,7 @@ span.time {
 }
 
 .pull-right .dropdown {
-  margin-left: 68%;
+  margin-left: 60%;
 }
 
 .dropdown-menu {

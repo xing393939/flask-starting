@@ -5,7 +5,7 @@ from flask  import Flask,request,session,g,redirect,url_for,Blueprint
 from flask import abort,render_template,flash
 
 import config
-from helpers import getAvatar, getDay, getMonth, formatDate, formatDate2, showPost, replyContent
+from helpers import getAvatar, getDay, getYear, formatDate, formatDate2, showPost, replyContent
 from database import db
 import markdown
 
@@ -32,7 +32,7 @@ def home(page):
     posts = db.query(Post).order_by(sa.desc(Post.created_date)).offset((page - 1) *
             config.paged).limit(config.paged)
     recent_replys = db.query(Reply).order_by(sa.desc(Reply.created_date)).limit(6)
-    return render_template("home.html", posts=posts, getDay=getDay, getMonth=getMonth, \
+    return render_template("home.html", posts=posts, getDay=getDay, getYear=getYear, \
             getAvatar=getAvatar, replyContent=replyContent, formatDate=formatDate, formatDate2=formatDate2, showPost=showPost, page=page,
             page_count=page_count, recent_replys=recent_replys)
 

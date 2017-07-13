@@ -18,7 +18,6 @@ def register_blueprints(app):
     from views import posts
     from views import reply
     from views import user
-    #from views import admin
     app.register_blueprint(posts)
     app.register_blueprint(reply)
     app.register_blueprint(user)

@@ -21,12 +21,8 @@ def add_reply(pid):
     website = request.form["reply[website]"]
     origin_content = request.form["reply[content]"]
     content = markdown.markdown(formatText(origin_content))
-    if name == "":
-        return redirect("/post/%d" % int(pid), error=u"请填入名字")
-    if email == "":
-        return redirect("/post/%d" % int(pid), error=u"请填入邮箱地址")
-    if origin_content == "":
-        return redirect("/post/%d" % int(pid), error=u"请输入评论内容")
+    if name == "" or email == "" or origin_content == "":
+        return redirect("/post/%d" % int(pid))
     number = db.query(Reply).filter(Reply.pid == pid).count() + 1
     db.add(Reply(pid=int(pid), name=name, email=email, website=website,
         content=content, origin_content=origin_content, number=number))

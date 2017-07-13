@@ -4,14 +4,11 @@ import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
-from database import init_db
 from flask import Flask
 import config
 
-
 app = Flask(__name__)
 app.config.from_object(config)
-
 
 def register_blueprints(app):
     # Prevents circular imports
@@ -25,5 +22,4 @@ def register_blueprints(app):
 register_blueprints(app)
 
 if __name__ == '__main__':
-    #init_db()
     app.run(debug=True)

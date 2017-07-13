@@ -7,6 +7,7 @@ from flask import abort,render_template,flash
 import config
 from helpers import getAvatar, getDay, getYear, formatDate, formatDate2, showPost, replyContent
 from database import db
+from database import init_db
 import markdown
 
 from models import Post, Reply
@@ -16,6 +17,11 @@ import sqlalchemy as sa
 config = config.rec()
 
 posts = Blueprint('posts', __name__)
+
+@posts.route('/install')
+def install():
+    init_db();
+    return 'ok'
 
 @posts.route('/',defaults={'page': 1})
 @posts.route('/<page>')

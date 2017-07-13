@@ -4,14 +4,12 @@ from flask  import Flask,request,session,g,redirect,url_for,Blueprint
 from flask import abort,render_template,flash
 from helpers import getAvatar
 import config
-#from .base import BaseHandler
+
 import base
 config = config.rec()
 
 user = Blueprint('user', __name__)
 
-
-#class LoginHandler(BaseHandler):
 @user.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'GET':
@@ -28,7 +26,6 @@ def login():
     else:
         return redirect("/login?error=wrongPwd")
 
-#class LogoutHandler(BaseHandler):
 @user.route('/logout')
 def logout():
     session.pop('user',None)

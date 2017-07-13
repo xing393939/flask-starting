@@ -65,7 +65,7 @@ def list_archive(page = 1):
         page = int(page)
     except ValueError: 
         page = 1
-    #page = int(page)
+
     if page < 1: abort(404)
     count = db.query(Post).count()
     page_count = (count + config.archive_paged - 1) // config.archive_paged

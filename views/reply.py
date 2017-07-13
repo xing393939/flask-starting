@@ -3,7 +3,6 @@
 from flask  import Flask,request,session,g,redirect,url_for,Blueprint
 from flask import abort,render_template,flash
 import config
-#from .base import BaseHandler
 from helpers import formatText,getAvatar
 from database import db
 import markdown
@@ -11,20 +10,12 @@ import markdown
 from models import Reply
 import base
 
-
 config = config.rec()
 
 reply = Blueprint('reply', __name__)
-"""
 
-class ReplyAddHandler(BaseHandler):
-"""
 @reply.route('/reply/<pid>/add',methods=['POST'])
 def add_reply(pid):
-    #name = self.get_argument("reply[name]", default='')
-    #email = self.get_argument("reply[email]", default='')
-    #website = self.get_argument("reply[website]", default='')
-    #origin_content = self.get_argument("reply[content]", default='')
     name = request.form["reply[name]"]
     email = request.form["reply[email]"]
     website = request.form["reply[website]"]

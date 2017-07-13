@@ -4,7 +4,6 @@ import time
 import sqlalchemy as sa
 from database import Base
 
-
 class Reply(Base):
     __tablename__ = 'reply'
     __table_args__ = {

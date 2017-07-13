@@ -7,7 +7,7 @@ _DBNAME = "kiblog" # 数据库名称
 
 #config
 SECRET_KEY = 'flaskblog'
-BLOG_TITLE = 'Welcome. | My Blog'
+BLOG_TITLE = '我的博客'
 BLOG_URL = 'http://www.demo.com'
 BLOG_NAME = 'Blog'
 

@@ -2,7 +2,6 @@
 
 import os
 import re
-from hashlib import md5
 import time
 import config
 
